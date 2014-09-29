@@ -7,24 +7,13 @@ server.route({
   path: '/{param*}',
   handler: {
     directory: {
-      path: './public/',
+      path: './build/shows/',
       listing: true,
       index: true
     }
   }
 });
 
-server.route({
-  method: 'GET',
-  path: '/podcast/rss/bookbytes.rss',
-  handler: function (request, reply) {
-    Sentinel.watch(request, reply);
-    reply.file('./public/podcast/rss/bookbytes.rss');
-  }
-});
-
 server.start(function () {
   console.log('Server running at:', server.info.uri);
 });
-
-Mercury.castNet();
