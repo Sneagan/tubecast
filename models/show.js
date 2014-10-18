@@ -64,6 +64,7 @@ Show.prototype.fetch = function(feed_url) {
 
 Show.prototype.grabRelevantData = function(data, self) {
   self.title = self.title === data.meta.title ? self.title : data.meta.title;
+  // The other elements that we needs should be set here.
 };
 
 module.exports = Show;
